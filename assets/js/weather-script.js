@@ -88,7 +88,7 @@ function getForecast(thisCity, apiKey) {
                 $(".forecast").append(
                     `<div class="card bg-primary shadow m-4">
                         <div class="card-body">
-                            <h4 class="card-title">${new Date(1000 * forecastDate.dt).getUTCDate()}/${(new Date(1000 * forecastDate.dt).getUTCMonth()) + 1}/${new Date(1000 * forecastDate.dt).getUTCFullYear()}</h4>
+                            <h4 class="card-title">${(new Date(1000 * forecastDate.dt).getUTCMonth()) + 1}/${new Date(1000 * forecastDate.dt).getUTCDate()}/${new Date(1000 * forecastDate.dt).getUTCFullYear()}</h4>
                             <div class="card-text">
                                 <img src="http://openweathermap.org/img/w/${forecastDate.weather[0].icon}.png">
                                 <p class="card-text">Temp: ${forecastDate.main.temp} &degC</p>
@@ -117,7 +117,7 @@ function displayCityWeather() {
 }
  
 
-$("form").on("submit", function(event) {
+$(".form").on("submit", function(event) {
     event.preventDefault();
     var newCity = $("#citySearch").val().trim();
     listCities.push(newCity);
