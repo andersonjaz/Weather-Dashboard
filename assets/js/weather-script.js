@@ -43,7 +43,7 @@ function getCurrentWeather(thisCity, apiKey) {
     }).then(function (data) {
         $(".cityCurrent").append(
             `<div class="row ml-1">
-                <h3 class="mr-3">${data.name} (${(new Date(1000 * data.dt).getUTCDate()) - 1}/${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
+                <h3 class="mr-3">${data.name} (${(new Date(1000 * data.dt).getUTCMonth()) + 1}/${(new Date(1000 * data.dt).getUTCDate()) - 1}/${new Date(1000 * data.dt).getUTCFullYear()})</h3>
                 <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
             </div>`
         )
