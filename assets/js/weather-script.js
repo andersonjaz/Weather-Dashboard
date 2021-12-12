@@ -33,7 +33,7 @@ function init() {
 
 //api for current city
 function getCurrentWeather(thisCity, apiKey) {
-    var currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${thisCity}&units=metric&appid=${apiKey}`;
+    var currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${thisCity}&units=imperial&appid=${apiKey}`;
     var cityLat;
     var cityLong;
 
@@ -47,9 +47,9 @@ function getCurrentWeather(thisCity, apiKey) {
                 <img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png">
             </div>`
         )
-        $(".cityCurrent").append(`<p>Temperature: ${data.main.temp} &degC</p>`)
+        $(".cityCurrent").append(`<p>Temperature: ${data.main.temp} &degF</p>`)
         $(".cityCurrent").append(`<p>Humidity: ${data.main.humidity} %</p>`)
-        $(".cityCurrent").append(`<p>Wind: ${data.wind.speed} Kph</p>`)
+        $(".cityCurrent").append(`<p>Wind: ${data.wind.speed} mph</p>`)
         cityLat = data.coord.lat;
         cityLong = data.coord.lon;
         getUVI(apiKey, cityLat, cityLong);
