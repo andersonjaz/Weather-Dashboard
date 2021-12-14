@@ -12,7 +12,7 @@ Website was created using the following:
 -jquery
 -bootstrap
 
-#Link for website: 
+## Link for website: 
 https://andersonjaz.github.io/Weather-Dashboard/
 
 By,
